@@ -2,9 +2,6 @@
   <img src="./assets/cover.svg" alt="cover" />
 </p>
 
-## Emad Rabah  
-Full-Stack & Industrial Systems Engineer
-
 I design and build production-grade software systems for industrial and critical environments, with a focus on scalable telemetry, edge gateways, and secure backend platforms. My work spans from low-level device communication to cloud-ready ingestion and monitoring solutions.
 
 ---
