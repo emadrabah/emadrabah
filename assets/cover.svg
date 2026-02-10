@@ -1,57 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1200" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1200" y2="320" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0B1220"/>
-      <stop offset="1" stop-color="#070A12"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#070A12"/>
+      <stop offset="1" stop-color="#0B1220"/>
     </linearGradient>
 
-    <linearGradient id="a" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#1E3A8A" stop-opacity="0.55"/>
-      <stop offset="0.5" stop-color="#38BDF8" stop-opacity="0.18"/>
-      <stop offset="1" stop-color="#1E3A8A" stop-opacity="0.55"/>
+    <linearGradient id="accent" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE" stop-opacity="0.14"/>
+      <stop offset="0.5" stop-color="#60A5FA" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0.14"/>
     </linearGradient>
 
-    <filter id="soft" x="-20%" y="-40%" width="140%" height="180%">
-      <feGaussianBlur stdDeviation="12" result="blur"/>
-      <feColorMatrix in="blur" type="matrix"
+    <pattern id="microGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#E5E7EB" stroke-opacity="0.06" stroke-width="1"/>
+      <path d="M12 0V24M0 12H24" stroke="#E5E7EB" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+
+    <filter id="glow" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feColorMatrix in="b" type="matrix"
         values="1 0 0 0 0
                 0 1 0 0 0
                 0 0 1 0 0
-                0 0 0 0.35 0" result="glow"/>
+                0 0 0 0.35 0" result="g"/>
       <feMerge>
-        <feMergeNode in="glow"/>
+        <feMergeNode in="g"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <clipPath id="chip">
+      <rect x="0" y="0" width="1200" height="320" rx="0"/>
+    </clipPath>
   </defs>
 
-  <!-- background -->
-  <rect width="1200" height="320" fill="url(#g)"/>
+  <g clip-path="url(#chip)">
+    <rect width="1200" height="320" fill="url(#bg)"/>
+    <rect width="1200" height="320" fill="url(#microGrid)"/>
 
-  <!-- subtle grid -->
-  <g opacity="0.08">
-    <path d="M0 64H1200M0 128H1200M0 192H1200M0 256H1200" stroke="#E5E7EB" stroke-width="1"/>
-    <path d="M120 0V320M240 0V320M360 0V320M480 0V320M600 0V320M720 0V320M840 0V320M960 0V320M1080 0V320" stroke="#E5E7EB" stroke-width="1"/>
-  </g>
+    <!-- top technical traces -->
+    <g opacity="0.55">
+      <path d="M70 70H240L270 40H420" stroke="url(#accent)" stroke-width="2"/>
+      <circle cx="240" cy="70" r="3" fill="#60A5FA" fill-opacity="0.45"/>
+      <circle cx="270" cy="40" r="3" fill="#22D3EE" fill-opacity="0.35"/>
 
-  <!-- wave layers -->
-  <path d="M0 220C140 170 260 250 400 215C540 180 660 120 800 145C940 170 1020 250 1200 210V320H0V220Z"
-        fill="#0F172A" opacity="0.95"/>
-  <path d="M0 240C160 200 280 285 430 245C580 205 690 145 830 165C970 185 1040 275 1200 235V320H0V240Z"
-        fill="#0B1220" opacity="0.9"/>
+      <path d="M760 52H960L990 82H1130" stroke="url(#accent)" stroke-width="2"/>
+      <circle cx="960" cy="52" r="3" fill="#60A5FA" fill-opacity="0.45"/>
+      <circle cx="990" cy="82" r="3" fill="#22D3EE" fill-opacity="0.35"/>
+    </g>
 
-  <!-- accent stroke -->
-  <g filter="url(#soft)">
-    <path d="M0 216C140 166 260 246 400 211C540 176 660 116 800 141C940 166 1020 246 1200 206"
-          stroke="url(#a)" stroke-width="3" opacity="0.85"/>
-  </g>
+    <!-- waveform layers -->
+    <path d="M0 214C140 164 260 244 400 209C540 174 660 114 800 139C940 164 1020 244 1200 204V320H0V214Z"
+          fill="#0F172A" opacity="0.92"/>
+    <path d="M0 238C160 198 280 283 430 243C580 203 690 143 830 163C970 183 1040 273 1200 233V320H0V238Z"
+          fill="#0B1220" opacity="0.90"/>
 
-  <!-- minimal highlight dots -->
-  <g opacity="0.55">
-    <circle cx="980" cy="86" r="2.2" fill="#38BDF8"/>
-    <circle cx="1010" cy="106" r="1.8" fill="#93C5FD"/>
-    <circle cx="1045" cy="78" r="1.6" fill="#38BDF8"/>
-    <circle cx="1120" cy="118" r="2.0" fill="#60A5FA"/>
+    <!-- accent stroke -->
+    <g filter="url(#glow)">
+      <path d="M0 210C140 160 260 240 400 205C540 170 660 110 800 135C940 160 1020 240 1200 200"
+            stroke="url(#accent)" stroke-width="3" opacity="0.95"/>
+    </g>
+
+    <!-- right-side "status panel" style blocks -->
+    <g opacity="0.9">
+      <rect x="860" y="118" width="290" height="86" rx="12" fill="#0B1220" fill-opacity="0.55" stroke="#E5E7EB" stroke-opacity="0.10"/>
+      <rect x="882" y="140" width="96" height="8" rx="4" fill="#E5E7EB" fill-opacity="0.14"/>
+      <rect x="882" y="158" width="190" height="8" rx="4" fill="#E5E7EB" fill-opacity="0.10"/>
+      <rect x="882" y="176" width="160" height="8" rx="4" fill="#E5E7EB" fill-opacity="0.08"/>
+      <circle cx="1132" cy="150" r="4" fill="#22D3EE" fill-opacity="0.40"/>
+      <circle cx="1132" cy="168" r="4" fill="#60A5FA" fill-opacity="0.35"/>
+    </g>
+
+    <!-- Name -->
+    <text x="72" y="138"
+          fill="#E5E7EB"
+          font-size="44"
+          font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+          font-weight="800"
+          letter-spacing="4">
+      EMAD RABAH
+    </text>
+
+    <!-- Subtitle / role line (kept subtle but technical) -->
+    <text x="74" y="172"
+          fill="#E5E7EB"
+          fill-opacity="0.70"
+          font-size="16"
+          font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+          font-weight="600"
+          letter-spacing="1.2">
+      INDUSTRIAL SYSTEMS • TELEMETRY • EDGE GATEWAYS • INGESTION PIPELINES
+    </text>
+
+    <!-- tiny footer line -->
+    <text x="74" y="196"
+          fill="#E5E7EB"
+          fill-opacity="0.45"
+          font-size="12"
+          font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+          font-weight="500"
+          letter-spacing="0.8">
+      Python • FastAPI • PostgreSQL/TimescaleDB • MQTT • Docker • Linux
+    </text>
   </g>
 </svg>
