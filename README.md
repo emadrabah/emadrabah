@@ -27,7 +27,7 @@ Strong emphasis on clean architecture, long-term maintainability, and practical 
 #### Campion CathView System
 An end-to-end industrial monitoring platform built for reliability and scalability.
 
-The system is structured with clear boundaries between edge data collection, ingestion, and visualization layers — allowing support for thousands of devices while remaining maintainable and secure.
+The system is structured with clear boundaries between edge data collection, ingestion, and visualization layers - allowing support for thousands of devices while remaining maintainable and secure.
 
 **Core Components**
 - **CathView Gateway**  
