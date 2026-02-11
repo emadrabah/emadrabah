@@ -2,7 +2,7 @@
   <img src="./assets/cover.svg" alt="cover" />
 </p>
 
-Full-Stack Solutions Engineer focused on building systems that work reliably in real-world environments.
+Focused on building systems that work reliably in real-world environments.
 
 Experience spans scalable backend platforms, industrial monitoring systems, and modern web & mobile applications. Work ranges from low-level device communication and telemetry ingestion to cloud-based dashboards, APIs, and production-ready Flutter applications powered by Firebase.
 
