@@ -2,43 +2,62 @@
   <img src="./assets/cover.svg" alt="cover" />
 </p>
 
-I design and build production-grade software systems for industrial and critical environments, with a focus on scalable telemetry, edge gateways, and secure backend platforms. My work spans from low-level device communication to cloud-ready ingestion and monitoring solutions.
+Full-Stack Solutions Engineer focused on building systems that work reliably in real-world environments.
+
+Experience spans scalable backend platforms, industrial monitoring systems, and modern web & mobile applications. Work ranges from low-level device communication and telemetry ingestion to cloud-based dashboards, APIs, and production-ready Flutter applications powered by Firebase.
+
+Strong emphasis on clean architecture, long-term maintainability, and practical engineering decisions - whether the system runs on an edge gateway, a Linux server, or inside a mobile application used daily by real users.
 
 ---
 
 ### Areas of Expertise
-- Industrial telemetry & monitoring systems  
-- Edge gateways (RS-485, Modbus, MQTT)  
-- Backend platforms (Python, FastAPI)  
-- Time-series data & analytics (PostgreSQL, TimescaleDB)  
-- Scalable ingestion pipelines  
-- Authentication & identity (SSO, SAML, Keycloak)  
-- Linux, Docker, and production deployments  
+- Scalable backend systems (Python, FastAPI)
+- Industrial telemetry & edge gateways (RS-485, Modbus, MQTT)
+- High-volume ingestion pipelines & time-series data
+- Web applications (TypeScript, modern frontend stacks)
+- Cross-platform mobile development with **Flutter**
+- Cloud-native solutions using **Firebase**
+- Authentication & identity systems (SSO, SAML)
+- Dockerized deployments & Linux-based infrastructure
 
 ---
 
 ### Selected Systems
 
 #### Campion CathView System
-An end-to-end industrial monitoring platform designed for reliable operation in production environments. The system is built with clear separation between edge collection, ingestion, and visualization layers to support scalability and long-term maintainability.
+An end-to-end industrial monitoring platform built for reliability and scalability.
+
+The system is structured with clear boundaries between edge data collection, ingestion, and visualization layers — allowing support for thousands of devices while remaining maintainable and secure.
 
 **Core Components**
 - **CathView Gateway**  
-  On-site edge gateway responsible for collecting telemetry from industrial devices using protocols such as Modbus over RS-485, performing validation and buffering, and securely publishing data upstream.
+  Edge service communicating with industrial devices over Modbus/RS-485, validating telemetry, buffering data safely, and publishing securely upstream.
 
 - **CathView Ingest**  
-  A scalable backend ingestion service that receives high-volume telemetry from distributed gateways over MQTT, validates and processes messages, and efficiently persists time-series data for analytics and monitoring.
+  A scalable ingestion layer receiving telemetry over MQTT, processing and validating messages, and persisting time-series data efficiently into PostgreSQL/TimescaleDB.
 
 - **CathView Web**  
-  A web-based monitoring and management application providing dashboards, device visibility, and system administration for operators and engineers.
+  A web application providing dashboards, device visibility, monitoring tools, and system administration capabilities.
 
-The Campion CathView System is designed to support large deployments with thousands of devices and gateways, while maintaining reliability, data integrity, and operational clarity.
+---
+
+### Other Work & Applications
+
+Beyond industrial systems, additional work includes production-ready applications built with Flutter and Firebase:
+
+- Cross-platform mobile applications
+- Real-time dashboards
+- Equipment and asset management systems
+- Delivery and operational management platforms
+- Backend APIs connected to Firebase and custom infrastructure
 
 ---
 
 ### Technology Stack
-- **Languages:** Python, TypeScript  
+- **Languages:** Python, TypeScript, Dart  
 - **Backend:** FastAPI, REST APIs  
+- **Mobile:** Flutter  
+- **Cloud:** Firebase  
 - **Data:** PostgreSQL, TimescaleDB  
 - **Messaging:** MQTT  
 - **Frontend:** Modern web stack (Vite, TypeScript)  
@@ -47,10 +66,10 @@ The Campion CathView System is designed to support large deployments with thousa
 ---
 
 ### Professional Approach
-I focus on clean architecture, clear system boundaries, and practical engineering decisions that work in real-world industrial environments. Most of my production work is maintained in private repositories, while public materials here reflect system design, structure, and engineering philosophy rather than proprietary code.
+Focus on building systems that are clear, scalable, and production-ready. Preference for well-defined boundaries, strong data models, and architecture designed for long-term growth rather than short-term fixes.
 
 ---
 
 ### Links
 - Portfolio: https://emadrabah.com  
-- GitHub: https://github.com/emadrabah
+- GitHub: https://github.com/emadrabah  
